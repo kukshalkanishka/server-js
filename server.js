@@ -7,10 +7,10 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/", express.static(path.join(__dirname, "client/build/")));
-
 app.get("/greeting", (req, res) => {
   res.send({ message: "Welcome to the page" });
 });
+
+app.use(express.static("client/build/static"));
 
 app.listen(8000, () => console.log("listening at port 8000"));
