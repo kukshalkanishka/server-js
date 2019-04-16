@@ -7,7 +7,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/static", express.static(path.join(__dirname, "public")));
+app.use("/", express.static(path.join(__dirname, "client/build/")));
 
 app.get("/greeting", (req, res) => {
   res.send({ message: "Welcome to the page" });
